@@ -1,0 +1,83 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height is taken */
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  height: 97vh; /* Set the height of the container to the full viewport height */
+  margin-left: 10px;
+}
+
+#currentData {
+  flex-shrink: 0; /* Prevent the first table from shrinking */
+  margin-bottom: 20px; /* Add some space between the current data and the snapshots container */
+}
+
+#snapshotsContainer {
+  flex-grow: 1; /* Allow the snapshots container to take up available space */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: auto; /* Hide vertical scrollbar if it's not needed */
+  white-space: nowrap; /* Keep tables in a single line */
+}
+
+.snapshot-table {
+  display: inline-block; /* Display tables inline for horizontal layout */
+  margin-right: 10px; /* Spacing between each new table */
+  border-collapse: collapse; /* For table styling */
+  min-width: 300px; /* Minimum width for each table */
+}
+
+.snapshot-table th,
+.snapshot-table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.snapshot-wrapper {
+  display: inline-block; /* Inline block to line up horizontally */
+  vertical-align: top; /* Align to the top to match tables */
+  margin-right: 10px; /* Margin to space out each snapshot */
+}
+
+/* Scrollbar styling */
+#snapshotsContainer::-webkit-scrollbar {
+  height: 12px;
+}
+
+#snapshotsContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#snapshotsContainer::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+#snapshotsContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Position the scrollbar at the bottom of the snapshots container */
+#snapshotsContainer {
+  position: relative; /* Required for absolute positioning of the scrollbar */
+}
+
+/* Update the styles for the tables to allow wrapping for span elements */
+.snapshot-table td {
+  white-space: normal; /* Allow wrapping inside table cells */
+}
+
+.zero-change {
+  color: red; /* Red color for +0 */
+}
+
+.positive-change {
+  color: black; /* White color for changes between 0 to 150 */
+}
+
+.high-positive-change {
+  color: green; /* Green color for changes of 150+ */
+}
