@@ -2,7 +2,7 @@ function x(element) {
   let dataSnapshots = [];
 
   fetchAndDisplayPlayers();
-  setInterval(fetchAndDisplayPlayers, 1800000); // Fetch data every 30 minutes
+  setInterval(fetchAndDisplayPlayers, 900000); // Fetch data every 15 minutes
 
   function fetchAndDisplayPlayers() {
     let link = "";
@@ -97,9 +97,9 @@ function x(element) {
 
       if (scoreChange === 0) {
         scoreChangeClass = "zero-change";
-      } else if (scoreChange > 0 && scoreChange < 420) {
+      } else if (scoreChange > 0 && scoreChange < 180) {
         scoreChangeClass = "positive-change";
-      } else if (scoreChange >= 550) {
+      } else if (scoreChange >= 300) {
         scoreChangeClass = "high-positive-change";
       } else {
         scoreChangeClass = "waving";
