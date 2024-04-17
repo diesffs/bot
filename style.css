@@ -79,5 +79,9 @@ body, html {
 }
 
 .high-positive-change {
-  color: green; /* Green color for changes of 150+ */
+  color: lightgreen; /* Green color for changes of 150+ */
+}
+
+.waving {
+  color: blue
 }
