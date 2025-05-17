@@ -9,7 +9,7 @@ const CHANNEL_ID = "YOUR_CHANNEL_ID"; // Replace this with your actual channel I
 client.once("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
 
-  cron.schedule("*/15 * * * *", async () => {
+  cron.schedule("* * * * *", async () => {
     try {
       const response = await fetch(
         "https://raongames.com/growcastle/restapi/season/now/players"
